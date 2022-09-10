@@ -30,20 +30,20 @@ public class MovimientoDinero {
     private LocalDate fechaCrecacion;
 
     @Column (name = "FechaModificación")
-    private LocalDate fechaModificación = fechaCrecacion;
+    private LocalDate fechaModificacion = fechaCrecacion;
 
 
 //  ________ Construcctor inicializado y vacío: ________________________________________________________________________
 
     public MovimientoDinero() {  }
 
-    public MovimientoDinero(String conceptoTransaccion, float montoTransaccion, Empleado empleado, Empresa empresa, LocalDate fechaCrecacion, LocalDate fechaModificación) {
+    public MovimientoDinero(String conceptoTransaccion, float montoTransaccion, Empleado empleado, Empresa empresa, LocalDate fechaCrecacion, LocalDate fechaModificacion) {
         this.conceptoTransaccion = conceptoTransaccion;
         this.montoTransaccion = montoTransaccion;
         this.empleado = empleado;
         this.empresa = empresa;
         this.fechaCrecacion = fechaCrecacion;
-        this.fechaModificación = fechaModificación;
+        this.fechaModificacion = fechaModificacion;
     }
 
 
@@ -68,7 +68,7 @@ public class MovimientoDinero {
 
     public void setFechaCrecacion(LocalDate fechaCrecacion) { this.fechaCrecacion = fechaCrecacion; }
 
-    public LocalDate getFechaModificación() { return fechaModificación; }
+    public LocalDate getFechaModificacion() { return fechaModificacion; }
 
-    public void setFechaModificación(LocalDate fechaModificación) { this.fechaModificación = fechaModificación; }
+    public void setFechaModificacion(LocalDate fechaModificacion) { this.fechaModificacion = fechaModificacion; }
 }
