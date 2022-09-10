@@ -1,40 +1,58 @@
 package com.zulu.Mintic_Ciclo3_Textilera.entities;
 
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "empleado")
 public class Empleado {
-
+//  ________ Columnas: _________________________________________________________________________________________________
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long idUser;
+    private Long idUser;
 
     @Column(name = "nombres", length = 50)
-    String nombres;
+    private String nombres;
 
     @Column(name = "apellidos", length = 50)
-    String apellidos;
+    private String apellidos;
 
     @Column(name = "correo", length = 50)
-    String correo;
-
+    private String correo;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "empresa_id")
     private Empresa empresa;
-
+//---------------------------------------------
+    /**@OneToMany (mappedBy = "empleado")
+    private List<MovimientoDinero> movimientosDineroEmpleado;**/
+//---------------------------------------------
     @Enumerated(EnumType.STRING)
     private NombresDeRol rol;
 
+
+//  ________ Construcctor inicializado y vacío: ________________________________________________________________________
     public Empleado(){}
 
-    public Empleado(String nombres, String apellidos, String correo) {
-
+    public Empleado(String nombres, String apellidos, String correo, Empresa empresa, NombresDeRol rol) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
+        //----------------------------------------------------
+        this.empresa = empresa;
+        //this.movimientosDineroEmpleado = movimientosDineroEmpleado; //OnetoMany movimientosDineroEmpresa
+        this.rol = rol;
+        //----------------------------------------------------
+    }
+
+
+// _______ Setters and Getters _________________________________________________________________________________________
+    public Long getIdUser() {
+    return idUser;
+}
+
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
     }
 
     public NombresDeRol getRol() {
@@ -52,8 +70,6 @@ public class Empleado {
     public Empresa getEmpresa() {
         return empresa;
     }
-
-
 
     public String getNombres() {
         return nombres;
@@ -79,11 +95,7 @@ public class Empleado {
         this.correo = correo;
     }
 
-    public Long getIdUser() {
-        return idUser;
-    }
+    /**public List<MovimientoDinero> movimientosDineroEmpleado() { return movimientosDineroEmpleado; }
 
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
-    }
+    public void setMovimientosDineroEmpleado(List<MovimientoDinero> movimientosDineroEmpleado) { this.movimientosDineroEmpleado = movimientosDineroEmpleado; }**/
 }
