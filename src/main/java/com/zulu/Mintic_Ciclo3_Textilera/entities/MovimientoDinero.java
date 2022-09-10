@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Table(name = "MovimientoDinero")
 public class MovimientoDinero {
 
-//  _________ Columnas: _________________________________________________________________________________________________
+//  ________ Columnas: _________________________________________________________________________________________________
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long idTransaccion;
