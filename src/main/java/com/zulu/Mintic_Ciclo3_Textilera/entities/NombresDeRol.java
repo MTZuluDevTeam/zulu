@@ -4,15 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.stream.Stream;
 
-
 public enum NombresDeRol {
-
     ADMINISTRADOR,
     OPERATIVO,
-
-
-
-
-
 }
 
