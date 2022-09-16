@@ -10,7 +10,10 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http.oauth2Login()
+        return  http.authorizeRequests()
+                .mvcMatchers("/").permitAll()
+                .anyRequest().authenticated()
+                .and().oauth2Login()
                 .and().build();
     }
 }
