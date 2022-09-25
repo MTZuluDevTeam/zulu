@@ -215,7 +215,7 @@ const eventListenerUsersToDataList = event => {
 }
 
 movementsFormUsersListSelect.addEventListener('click', eventListenerUsersToDataList, false);
-
+movementsFormUsersListSelect.addEventListener('change', eventListenerUsersToDataList, false);
 
 
 
@@ -314,7 +314,7 @@ const eventListenerEmpresaToDataList = event =>{
 }
 
 usersFormEmpresaListSelect.addEventListener('click', eventListenerEmpresaToDataList,false)
-
+usersFormEmpresaListSelect.addEventListener('change', eventListenerEmpresaToDataList,false)
 
 
 
