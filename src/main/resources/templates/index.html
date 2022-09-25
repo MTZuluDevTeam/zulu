@@ -30,7 +30,7 @@
             </ul>
             <span class="navbar-text">
                 <a th:href="@{/oauth2/authorization/auth0}" sec:authorize="!isAuthenticated()">Iniciar sesión</a>
-                <a href="/logout" sec:authorize="isAuthenticated()">Logout</a>
+                <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Logout</a>
             </span>
         </div>
     </div>
