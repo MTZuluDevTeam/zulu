@@ -5,7 +5,6 @@ import com.zulu.Mintic_Ciclo3_Textilera.repositories.EmpleadoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,11 +12,8 @@ public class EmpleadoServicio {
     @Autowired
     private EmpleadoRepo empleadoRepo;
 
-    public List<Empleado> getAllEmpleados(){
-        List<Empleado> empleadoList = new ArrayList<>();
-        empleadoRepo.findAll().forEach(empleado -> empleadoList.add(empleado));
-        return empleadoList;
-
+    public List<Empleado> getEmpleados(){
+        return empleadoRepo.findAll();
     }
 
     public Empleado getEmpleado(Long id) {

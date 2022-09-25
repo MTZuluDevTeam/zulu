@@ -25,6 +25,9 @@ public class Empleado {
     @Column(name = "correo", length = 50)
     String correo;
 
+    @Column(name = "telefono", length = 50)
+    Long empleadoTelefono;
+
     @OnDelete(action = OnDeleteAction.CASCADE)
     @ManyToOne
     @JoinColumn(name = "empresa_id")
@@ -38,13 +41,20 @@ public class Empleado {
 
     public Empleado(){}
 
-    public Empleado(String nombres, String apellidos, String correo, Empresa empresa, NombresDeRol rol ) {
+    public Long getEmpleadoTelefono() {
+        return empleadoTelefono;
+    }
+
+    public void setEmpleadoTelefono(Long empleadoTelefono) {
+        this.empleadoTelefono = empleadoTelefono;
+    }
+
+    public Empleado(String nombres, String apellidos, String correo, Long empleadoTelefono) {
 
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correo = correo;
-        this.empresa = empresa;
-        this.rol = rol;
+        this.empleadoTelefono = empleadoTelefono;
     }
 
     public Empresa getEmpresa() {

@@ -5,6 +5,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "movimiento_dinero")
@@ -12,13 +13,16 @@ public class MovimientoDinero {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long transactionID; // ID de la transacción.
+    Long transactionID; // ID de la transacción.
 
     @Column(name = "concepto_movimiento")
-    private String conceptoMovimiento;      // Descripción del movimiento.
+    String conceptoMovimiento;      // Descripción del movimiento.
 
     @Column(name = "monto_dinero")
     float montoDinero = 0.0f;      // Montos positivos y negativos de x movimiento.
+
+    @Temporal(TemporalType.DATE)
+    Date fechaMovimiento;
 
 
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -31,10 +35,19 @@ public class MovimientoDinero {
     public MovimientoDinero(){
     }
 
-    public MovimientoDinero (Long transactionID, float montoDinero, String conceptoMovimiento){
+    public Date getFechaMovimiento() {
+        return fechaMovimiento;
+    }
+
+    public void setFechaMovimiento(Date fechaMovimiento) {
+        this.fechaMovimiento = fechaMovimiento;
+    }
+
+    public MovimientoDinero (Long transactionID, float montoDinero, String conceptoMovimiento, Date fechaMovimiento){
         this.transactionID = transactionID;
         this.montoDinero = montoDinero;
         this.conceptoMovimiento = conceptoMovimiento;
+        this.fechaMovimiento = fechaMovimiento;
 
     }
 
