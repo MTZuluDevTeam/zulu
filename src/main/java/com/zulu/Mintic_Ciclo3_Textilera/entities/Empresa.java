@@ -14,7 +14,7 @@ import java.util.Set;
 
 @Entity
 
-@Table(name = "empresa")
+@Table(name = "empresas")
 public class Empresa {
 
 
