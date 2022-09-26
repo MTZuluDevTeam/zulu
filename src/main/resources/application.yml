@@ -5,8 +5,8 @@ spring:
       client:
         registration:
           auth0:
-            client-id: gblcYaI4Xc3CzquLNJVpYfXMO8RX3Aee
-            client-secret: suLD9J_PoIRJGBbl82ku_vWNaiG7v034uo3CRhyI4ItXfNEYuKPSXiQIz716_gPz
+            client-id: CszMqIyeNvdwjuMjNUm8zQGPEBNHOnx1
+            client-secret: l0U8Fq2ekQTdncIPRdTUeMEndnciiSuZvhZ22GJGd4WKI-dbB0nup6t252h8JmGG
             scope:
               - openid
               - profile
@@ -14,4 +14,4 @@ spring:
         provider:
           auth0:
             # trailing slash is important!
-            issuer-uri: https://throbbing-brook-9357.us.auth0.com/
+            issuer-uri: https://demo1task.us.auth0.com/
