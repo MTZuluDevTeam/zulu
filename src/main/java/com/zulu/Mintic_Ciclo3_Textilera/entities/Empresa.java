@@ -1,89 +1,81 @@
 package com.zulu.Mintic_Ciclo3_Textilera.entities;
 
 
-import com.zulu.Mintic_Ciclo3_Textilera.services.EmpleadoServicio;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
-
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 
-@Table(name = "empresas")
+@Table(name = "empresa")
 public class Empresa {
 
-
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Long idEmpresa;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private int id;
+    private String nombre;
+    private String direccion;
+    private String telefono;
+    private String nit;
 
-    @Column(name = "nombre_empresa")
-    String nombreEmpresa;
-    @Column(name = "direccion_empresa")
-    String direccionEmpresa;
+    @OneToMany( mappedBy = "empresa")
+    public List<Empleado> empleado;
 
-    @Column(name = "telefono")
-    Long telefono;
+    public Empresa (){}
 
-    @Column(name = "nit")
-    Long nit;
-
-
-
-    public Empresa(){}
-
-    public Empresa(String nombreEmpresa, String direccionEmpresa, Long telefono, Long nit) {
-        this.nombreEmpresa = nombreEmpresa;
-        this.direccionEmpresa = direccionEmpresa;
+    public Empresa(int id, String nombre, String direccion, String telefono, String nit, List<Empleado> empleado) {
+        this.id = id;
+        this.nombre = nombre;
+        this.direccion = direccion;
         this.telefono = telefono;
         this.nit = nit;
+        this.empleado = empleado;
     }
 
-    public Long getIdEmpresa() {
-        return idEmpresa;
+    public int getId() {
+        return id;
     }
 
-    public void setIdEmpresa(Long idEmpresa) {
-        this.idEmpresa = idEmpresa;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getnombreEmpresa() {
-        return nombreEmpresa;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setnombreEmpresa(String nombreEmpresa) {
-        this.nombreEmpresa = nombreEmpresa;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getdireccionEmpresa() {
-        return direccionEmpresa;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setdireccionEmpresa(String direccionEmpresa) {
-        this.direccionEmpresa = direccionEmpresa;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public Long getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Long telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public Long getNit() {
+    public String getNit() {
         return nit;
     }
 
-    public void setNit(Long nit) {
+    public void setNit(String nit) {
         this.nit = nit;
     }
 
+    public List<Empleado> getEmpleado() {
+        return empleado;
+    }
 
+    public void setEmpleado(List<Empleado> empleado) {
+        this.empleado = empleado;
+    }
 }

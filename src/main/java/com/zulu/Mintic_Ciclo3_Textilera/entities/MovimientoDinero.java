@@ -1,61 +1,44 @@
 package com.zulu.Mintic_Ciclo3_Textilera.entities;
 
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "movimiento_dinero")
+@Table(name = "movimientos")
 public class MovimientoDinero {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long transactionID; // ID de la transacción.
+    public int transactionID; // ID de la transacción.
 
-    @Column(name = "concepto_movimiento")
-    String conceptoMovimiento;      // Descripción del movimiento.
+    private String conceptoMovimiento;      // Descripción del movimiento.
 
-    @Column(name = "monto_dinero")
     float montoDinero = 0.0f;      // Montos positivos y negativos de x movimiento.
 
-    @Temporal(TemporalType.DATE)
-    Date fechaMovimiento;
 
-
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @ManyToOne
     @JoinColumn(name = "empleado_id")
-    private Empleado empleado; // Id del perfil del usuario que realizó el movimiento del dinero.
+    public Empleado empleado; // Id del perfil del usuario que realizó el movimiento del dinero.
 
 
 
     public MovimientoDinero(){
     }
 
-    public Date getFechaMovimiento() {
-        return fechaMovimiento;
-    }
-
-    public void setFechaMovimiento(Date fechaMovimiento) {
-        this.fechaMovimiento = fechaMovimiento;
-    }
-
-    public MovimientoDinero (Long transactionID, float montoDinero, String conceptoMovimiento, Date fechaMovimiento){
+    public MovimientoDinero(int transactionID, String conceptoMovimiento, float montoDinero, Empleado empleado) {
         this.transactionID = transactionID;
-        this.montoDinero = montoDinero;
         this.conceptoMovimiento = conceptoMovimiento;
-        this.fechaMovimiento = fechaMovimiento;
-
+        this.montoDinero = montoDinero;
+        this.empleado = empleado;
     }
 
-    public Long getTransactionID() {
+
+
+    public int getTransactionID() {
         return transactionID;
     }
 
-    public void setTransactionID(Long transactionID) {
+    public void setTransactionID(int transactionID) {
         this.transactionID = transactionID;
     }
 
