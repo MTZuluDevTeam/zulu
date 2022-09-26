@@ -11,7 +11,7 @@ const fetchEnterprise = () => {
 
                     enterpriseList.innerHTML = '';
 
-                    for (let i = 0; i < data.length; i++) {
+                    for (let i = data.length - 1; i >= 0; i--) {
 
                         const tr =  document.createElement('tr');   
 
@@ -32,6 +32,9 @@ const fetchEnterprise = () => {
                         enterpriseList.append(tr);
                     }
 
+                    
+                        
+                   
 
                 
                     
@@ -41,6 +44,8 @@ const fetchEnterprise = () => {
         }
 
         )
+
+        
     }
 
 fetchEnterprise();
@@ -55,7 +60,7 @@ const fetchUsers = () => {
 
                 usersList.innerHTML = '';
 
-                for (let i = 0; i < data.length; i++) {
+                for (let i = data.length - 1; i >= 0; i--) {
 
                     const tr =  document.createElement('tr');   
 
@@ -105,11 +110,14 @@ const fetchMovements = () => {
 
                     let totalMov = [];                    
     
-                    for (let i = 0; i < data.length; i++) {
+                    for (let i = data.length - 1; i >= 0; i--) {
     
                         const tr =  document.createElement('tr');   
     
                             tr.innerHTML += `
+                            <td class="d-none">
+                                ${data[i]['transactionID']}
+                            </td>
                             <td>
                                 ${data[i]['conceptoMovimiento']}
                             </td>
@@ -127,7 +135,19 @@ const fetchMovements = () => {
 
                         totalMov.push(data[i]['montoDinero']);
 
+                       
+
                     }
+
+                    
+                    
+                    //Paginating
+
+                  
+
+                    
+
+                    
                     
                     //Calculate total:
                     document.querySelector('#movAmount').innerHTML = `$${totalMov.reduce((a, b) => a + b, 0)}`
