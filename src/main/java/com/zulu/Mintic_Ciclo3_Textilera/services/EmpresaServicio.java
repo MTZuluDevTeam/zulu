@@ -17,7 +17,7 @@ public class EmpresaServicio {
     //Metodo para ver todos las empresas registrados
     public List<Empresa> getAllEmpresa(){
         List<Empresa> empresaList= new ArrayList<>();
-        empresaRepository.findAll().forEach(empleado -> empresaList.add(empleado));
+        empresaRepository.findAll().forEach(empresa -> empresaList.add(empresa));
         return empresaList;
     }
 

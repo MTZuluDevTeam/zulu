@@ -151,7 +151,7 @@ public class ControllerFull {
         }
 
     @GetMapping("/AgregarEmpresa")
-    public String nuevoEmpresas(Model model, @ModelAttribute("mensaje") String mensaje){
+    public String nuevoEmpresa(Model model, @ModelAttribute("mensaje") String mensaje){
         Empresa empr= new Empresa();
         model.addAttribute("empr",empr);
         model.addAttribute("mensaje",mensaje);
