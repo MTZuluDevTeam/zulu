@@ -12,6 +12,12 @@
     <title>toyHouse</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/148dd1e53c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous">
+
+    </script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
@@ -30,7 +36,7 @@
             </ul>
             <span class="navbar-text">
                 <a th:href="@{/oauth2/authorization/auth0}" sec:authorize="!isAuthenticated()">Iniciar sesión</a>
-                <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Logout</a>
+                <strong th:text="${profile.get('name')}" sec:authorize="isAuthenticated()"></strong> | <a th:href="@{/logout}" sec:authorize="isAuthenticated()"><i class="fas fa-sign-out-alt"></i></a>
             </span>
         </div>
     </div>
@@ -72,7 +78,7 @@
                        </div>
                        <div class="row">
                            <div class="col">
-                               <table class="table table-striped">
+                               <table class="table table-striped" id="movimientosTable">
                                    <thead>
                                    <tr>
                                        <th>Concepto</th>
@@ -296,7 +302,9 @@
                <div class="card">
                    <div class="card-body">
                        <h4>Bienvenido!</h4>
-                       <h5>Para acceder al sistema debe <a th:href="@{/oauth2/authorization/auth0}">iniciar sesión</a>.</h5>
+
+                       <p><strong>transactionTracker</strong> es una aplicación desarrollada por ZulúGroup bajo la asesoria del MINTIC2022</p>
+                       <h6>Para acceder al sistema debe <a th:href="@{/oauth2/authorization/auth0}">iniciar sesión</a>.</h6>
                    </div>
                </div>
             </div>
@@ -306,6 +314,9 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
+<script>
+    
+       
+</script>
 </body>
 </html>
