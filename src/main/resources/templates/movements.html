@@ -41,9 +41,9 @@
     <div class="container px-4 px-lg-5 text-center">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-10">
-                <h1>Sistema de gestión <br>de ingresos y gastos</h1>
+                <h1>Sistema de gestión <br>de ingresos y gastos<br>de usuarios y de empresas</h1>
                 <p class="lead mb-5">
-                    Podras realizar consultas y registros de nuevas transacciones.
+                    Podras realizar consultas y registros de nuevas transacciones, usuarios o empresas.
                 </p>
             </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="container px-4 px-lg-5">
             <div class="content-section-heading">
                 <h3 class="text-secondary mb-0">Consulta / Crea </h3>
-                <h3 class="mb-5">Información de movimientos</h3>
+                <h3 class="mb-5">Información</h3>
             </div>
         </div>
         <div class="container" sec:authorize="isAuthenticated()">
@@ -71,12 +71,12 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active tabs" id="home-tab" data-bs-toggle="tab" data-bs-target="#movements" type="button" role="tab" aria-controls="movements" aria-selected="true" ><i class="fas fa-random"></i> Ingresos y egresos</button>
                         </li>
-                        <!--<li class="nav-item" role="presentation">
+                        <li class="nav-item" role="presentation">
                             <button class="nav-link tabs" id="profile-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="false"><i class="fas fa-users"></i> Usuarios</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link tabs" id="contact-tab" data-bs-toggle="tab" data-bs-target="#enterprises" type="button" role="tab" aria-controls="enterprises" aria-selected="false"><i class="fas fa-city"></i> Empresas</button>
-                        </li>-->
+                        </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="movements" role="tabpanel" aria-labelledby="movements-tab">
@@ -161,7 +161,7 @@
 
 
                         </div>
-                        <!--<div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
+                        <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
 
                             <div class="row my-3">
                                 <div class="col-12">
@@ -310,7 +310,7 @@
                             </div>
 
 
-                        </div>-->
+                        </div>
                     </div>
                 </div>
             </div>
