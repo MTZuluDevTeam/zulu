@@ -54,6 +54,7 @@ public class ControllerFull {
         if (principal != null) {
             User user = this.userService.getOrCreateUser(principal.getClaims());
             model.addAttribute("user", user);
+            return "indexlp";
         }
         return "indexlp";
     }
