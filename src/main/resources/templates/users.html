@@ -71,7 +71,7 @@
         <th>Empresa</th>
         <th>Rol</th>
         <th>Estado</th>
-        <th>Movimientos</th>
+        <!--<th>Movimientos</th>-->
         <th>Editar</th>
         <th>Eliminar</th>
     </tr>
@@ -87,7 +87,7 @@
         <td th:if="${empleado.rol=='ROLE_USER'}">Operativo</td>
         <td th:if="${empleado.estado==true}">Activo</td>
         <td th:if="${empleado.estado==false}">Inactivo</td>
-        <td><button type="button" class="btn btn-info"><a th:href="@{/Empleado/{id}/Movimientos(id=${empleado.id})}">Ver</a></button></td>
+        <!--<td><button type="button" class="btn btn-info"><a th:href="@{/Empleado/{id}/Movimientos(id=${empleado.id})}">Ver</a></button></td>-->
         <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpleado/{id}(id=${empleado.id})}">Editar</a></button></td>
         <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarEmpleado/{id}(id=${empleado.id})}">Eliminar</a></button></td>
     </tr>
