@@ -177,8 +177,8 @@ public class ControllerFull {
         //Creamos un atributo para el modelo, que se llame igualmente empl y es el que ira al html para llenar o alimentar campos
         model.addAttribute("empr",empr);
         model.addAttribute("mensaje", mensaje);
-        /*List<Empresa> listaEmpresas= empresaService.getAllEmpresa();
-        model.addAttribute("emprelist",listaEmpresas);*/
+        List<Empresa> listaEmpresas= empresaService.getAllEmpresa();
+        model.addAttribute("emprelist",listaEmpresas);
         return "modenterprises";
     }
 
