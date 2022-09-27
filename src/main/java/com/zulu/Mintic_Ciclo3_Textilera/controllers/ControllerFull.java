@@ -185,8 +185,8 @@ public class ControllerFull {
     @PostMapping("/ActualizarEmpresa")
     public String updateEmpresa(@ModelAttribute("empl") Empresa empr, RedirectAttributes redirectAttributes){
         Integer id=empr.getId(); //Sacamos el id del objeto empl
-        String Oldpass=empleadoService.getEmpleadoById(id).getPassword(); //Con ese id consultamos la contraseña que ya esta en la base
-        /*if(!empr.getPassword().equals(Oldpass)){
+        /*String Oldpass=empleadoService.getEmpleadoById(id).getPassword(); //Con ese id consultamos la contraseña que ya esta en la base
+        if(!empr.getPassword().equals(Oldpass)){
             String passEncriptada= passwordEncoder();.encode(empr.getPassword());
             empr.setPassword(passEncriptada);*/
 
